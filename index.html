@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart College Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-blur"></div>
+
+  <header class="top-bar">
+    <div class="logo">🎓 Nehru Institute Of Technology,SCA</div>
+    <nav class="nav-links">
+      <button class="nav-btn" data-target="dashboard">Dashboard |</button>
+      <button class="nav-btn" data-target="attendance">Attendance |</button>
+      <button class="nav-btn" data-target="cgpa">CGPA |</button>
+      <button class="nav-btn" data-target="reminders">Reminders |</button>
+    </nav>
+    <button id="themeToggle" class="theme-toggle">☀️</button>
+  </header>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page active">
+      <h1 class="title">Smart College Assistant</h1>
+      <p class="subtitle">All your student tools in one cool dashboard.</p>
+
+      <div class="card-grid">
+        <div class="card tilt">
+          <h2>Today’s Summary</h2>
+          <p id="todaySummary">3 classes • 1 assignment due • 1 event</p>
+        </div>
+
+        <div class="card tilt">
+          <h2>Quick Timetable</h2>
+          <ul class="list">
+            <li><span>9:00</span> – DBMS</li>
+            <li><span>11:00</span> – Web Tech</li>
+            <li><span>2:00</span> – AIML Lab</li>
+          </ul>
+        </div>
+
+        <div class="card tilt">
+          <h2>Upcoming Event</h2>
+          <p>Project review in <span id="eventCountdown">3 days</span>.</p>
+        </div>
+
+        <div class="card tilt highlight">
+          <h2>Tip of the Day</h2>
+          <p id="tipText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTENDANCE -->
+    <section id="attendance" class="page">
+      <h1 class="title">Attendance Calculator</h1>
+      <div class="card wide">
+        <div class="form-row">
+          <label>Total Classes:</label>
+          <input type="number" id="totalClasses" placeholder="e.g. 60" />
+        </div>
+        <div class="form-row">
+          <label>Attended Classes:</label>
+          <input type="number" id="attendedClasses" placeholder="e.g. 48" />
+        </div>
+        <button id="calcAttendance" class="primary-btn">Calculate</button>
+        <p id="attendanceResult" class="result"></p>
+      </div>
+    </section>
+
+    <!-- CGPA -->
+    <section id="cgpa" class="page">
+      <h1 class="title">CGPA Calculator</h1>
+      <div class="card wide">
+        <p class="small-text">Enter SGPA for each semester (comma separated).</p>
+        <input
+          type="text"
+          id="sgpaInput"
+          placeholder="e.g. 8.1, 7.9, 8.3, 8.0"
+        />
+        <button id="calcCgpa" class="primary-btn">Calculate CGPA</button>
+        <p id="cgpaResult" class="result"></p>
+      </div>
+    </section>
+
+    <!-- REMINDERS -->
+    <section id="reminders" class="page">
+      <h1 class="title">Quick Reminders</h1>
+      <div class="card wide">
+        <div class="form-row">
+          <input
+            type="text"
+            id="reminderText"
+            placeholder="E.g. Submit assignment by 5 PM"
+          />
+          <button id="addReminder" class="primary-btn">Add</button>
+        </div>
+        <ul id="reminderList" class="list reminder-list"></ul>
+        <button id="clearReminders" class="secondary-btn">
+          Clear All
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+   By Krishna Kumar.KM
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
